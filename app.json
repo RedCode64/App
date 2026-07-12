@@ -1,0 +1,25 @@
+{
+  "expo": {
+    "name": "GRIDRUNNER",
+    "slug": "gridrunner",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#05060e",
+    "newArchEnabled": true,
+    "ios": {
+      "bundleIdentifier": "com.gridrunner.app",
+      "supportsTablet": false,
+      "infoPlist": {
+        "UIBackgroundModes": []
+      }
+    },
+    "android": {
+      "package": "com.gridrunner.app",
+      "backgroundColor": "#05060e"
+    },
+    "splash": {
+      "backgroundColor": "#05060e"
+    }
+  }
+}
