@@ -1,4 +1,4 @@
-import { Audio } from 'expo-av';
+import { createAudioPlayer } from 'expo-audio';
 
 /**
  * Synth tones generated at runtime as WAV data URIs — no bundled audio files,
@@ -101,15 +101,17 @@ function toneUri(kind: ToneKind): string {
   return uri;
 }
 
-export async function playTone(kind: ToneKind, enabled: boolean): Promise<void> {
+export function playTone(kind: ToneKind, enabled: boolean): void {
   if (!enabled) return;
   try {
-    const { sound } = await Audio.Sound.createAsync({ uri: toneUri(kind) }, { shouldPlay: true, volume: 0.5 });
-    sound.setOnPlaybackStatusUpdate((status) => {
-      if (status.isLoaded && status.didJustFinish) {
-        void sound.unloadAsync();
+    const player = createAudioPlayer(toneUri(kind));
+    player.volume = 0.5;
+    player.addListener('playbackStatusUpdate', (status) => {
+      if (status.didJustFinish) {
+        player.remove();
       }
     });
+    player.play();
   } catch {
     // Audio is a garnish; never let it break the interaction.
   }

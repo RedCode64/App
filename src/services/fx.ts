@@ -8,7 +8,7 @@ export async function completionFx(soundEnabled: boolean): Promise<void> {
   } catch {
     // Haptics unavailable on some devices/simulators.
   }
-  await playTone('complete', soundEnabled);
+  playTone('complete', soundEnabled);
 }
 
 export async function levelUpFx(soundEnabled: boolean): Promise<void> {
@@ -17,7 +17,7 @@ export async function levelUpFx(soundEnabled: boolean): Promise<void> {
   } catch {
     // See above.
   }
-  await playTone('levelup', soundEnabled);
+  playTone('levelup', soundEnabled);
 }
 
 export async function unlockFx(soundEnabled: boolean): Promise<void> {
@@ -26,7 +26,7 @@ export async function unlockFx(soundEnabled: boolean): Promise<void> {
   } catch {
     // See above.
   }
-  await playTone('unlock', soundEnabled);
+  playTone('unlock', soundEnabled);
 }
 
 export async function errorFx(soundEnabled: boolean): Promise<void> {
@@ -35,5 +35,5 @@ export async function errorFx(soundEnabled: boolean): Promise<void> {
   } catch {
     // See above.
   }
-  await playTone('error', soundEnabled);
+  playTone('error', soundEnabled);
 }

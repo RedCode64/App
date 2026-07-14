@@ -51,7 +51,7 @@ export const AnimatedGridBackground = memo(function AnimatedGridBackground() {
 
 const styles = StyleSheet.create({
   container: {
-    ...StyleSheet.absoluteFillObject,
+    ...StyleSheet.absoluteFill,
     opacity: 0.07,
   },
 });

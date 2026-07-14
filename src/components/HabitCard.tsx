@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     opacity: 0.8,
   },
   glowLayer: {
-    ...StyleSheet.absoluteFillObject,
+    ...StyleSheet.absoluteFill,
     opacity: 0,
   },
   body: {
